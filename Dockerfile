@@ -23,15 +23,14 @@ WORKDIR /app
 
 
 
-RUN git clone https://github.com/ant-design/ant-design-pro-site.git
+RUN git clone --depth=1 https://github.com/ant-design/ant-design-pro.git my-project -b v2
 
 RUN ls
 
-WORKDIR /app/ant-design-pro-site
+WORKDIR /app/my-project
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
-RUN npm i front-matter
 
 
 # Second build stage

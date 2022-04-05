@@ -13,7 +13,7 @@ WORKDIR /app
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
 #RUN npm install -g create-react-app
-#RUN npx create-react-app react-app
+RUN npx create-react-app react-app
 #RUN npm install forever -g
 
 # Second build stage

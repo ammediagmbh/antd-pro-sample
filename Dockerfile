@@ -6,8 +6,7 @@ RUN apt-get update
 
 # Install software
 RUN apt-get install -y git
-RUN apt-get install -y python2
-RUN apt-get install -y build-essential
+
 
 
 

@@ -25,6 +25,7 @@ RUN git clone --depth=1 https://github.com/ant-design/ant-design-pro.git my-proj
 WORKDIR /app/my-project
 
 # Install Node.js dependencies defined in '/app/packages.json'
+RUN npm install -g npm@8.6.
 RUN npm install
 
 

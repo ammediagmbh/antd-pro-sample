@@ -37,8 +37,8 @@ ENV NODE_ENV="production"
 COPY --from=builder /app /app
 
 # Create a non-root user
-RUN useradd -r -u 1001 -g root nonroot
-RUN chown -R nonroot /app
+#RUN useradd -r -u 1001 -g root nonroot
+#RUN chown -R nonroot /app
 #USER nonroot
 
 EXPOSE 3000

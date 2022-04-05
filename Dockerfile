@@ -38,7 +38,7 @@ RUN chown -R nonroot /app
 USER nonroot
 
 WORKDIR /app
-EXPOSE 3000
+EXPOSE 8000
 
 # Start the application
 CMD ["npm", "start"]

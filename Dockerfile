@@ -26,7 +26,7 @@ RUN git clone "https://ammediagmbh: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@gith
 RUN npm install pm2 -g
 RUN npm install
 
-RUN pm2 start npm --name "appointment" -- start
+#RUN pm2 start npm --name "appointment" -- start
 
 
 # Second build stage
@@ -44,4 +44,4 @@ USER nonroot
 EXPOSE 3000
 
 # Start the application
-#CMD ["npm", "start"]
+CMD ["pm2", "start npm --name "appointment" -- start"]

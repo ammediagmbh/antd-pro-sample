@@ -38,7 +38,7 @@ FROM bitnami/node:16-prod
 ENV NODE_ENV="production"
 
 # Copy the application code
-COPY --from=builder /app/ant-design-pro-site /app/ant-design-pro-site
+COPY --from=builder /app /app
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root nonroot

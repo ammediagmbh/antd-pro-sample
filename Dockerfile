@@ -2,11 +2,22 @@
 FROM bitnami/node:16 as builder
 ENV NODE_ENV="production"
 
+RUN apt-get update
+
+# Install software
+RUN apt-get install -y git
+
+
+
+
 # Copy app's source code to the /app directory
 COPY . /app
 
 # The application's directory will be the working directory
 WORKDIR /app
+
+
+RUN git clone https://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@github.com/ammediagmbh/appointment.intranet.venus-beauty.ch
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install -g create-react-app

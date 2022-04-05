@@ -25,7 +25,9 @@ WORKDIR /app/my-project
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install -g npm@8.6.0
-RUN npm install
+RUN npm install -g yarn
+#RUN npm install
+RUN yarn install --production=false
 
 
 # Second build stage

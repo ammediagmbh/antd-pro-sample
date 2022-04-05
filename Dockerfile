@@ -15,7 +15,6 @@ RUN npm install
 RUN npm install -g create-react-app
 RUN npx create-react-app react-app
 RUN npm install forever -g
-RUN ls .
 
 # Second build stage
 FROM bitnami/node:16-prod

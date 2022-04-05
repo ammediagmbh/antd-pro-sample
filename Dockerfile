@@ -26,6 +26,7 @@ WORKDIR /app/my-project
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install -g npm@8.6.0
 RUN npm install -g yarn
+RUN npm install -g pm2
 #RUN npm install
 RUN yarn install --production=false
 
@@ -45,5 +46,7 @@ USER nonroot
 WORKDIR /app/my-project
 EXPOSE 8000
 
+#RUN pm2 start npm --name "app name" -- start
+
 # Start the application
-CMD ["npm", "start"]
+CMD ["pm2", "start npm --name "app name" -- start"]

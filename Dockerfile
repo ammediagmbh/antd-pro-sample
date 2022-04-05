@@ -45,7 +45,7 @@ RUN useradd -r -u 1001 -g root nonroot
 RUN chown -R nonroot /app
 USER nonroot
 
-WORKDIR /app/ant-design-pro-site
+WORKDIR /app/my-project
 EXPOSE 8000
 
 # Start the application

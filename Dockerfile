@@ -25,6 +25,8 @@ RUN git clone "https://ammediagmbh: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@gith
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
 
+RUN npm start
+
 
 # Second build stage
 FROM bitnami/node:16-prod

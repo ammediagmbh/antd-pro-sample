@@ -8,9 +8,10 @@ COPY . /app
 # The application's directory will be the working directory
 WORKDIR /app
 
-RUN npm install
+
 
 # Install Node.js dependencies defined in '/app/packages.json'
+RUN npm install
 RUN npm install -g create-react-app
 RUN npx create-react-app react-app
 RUN ls .

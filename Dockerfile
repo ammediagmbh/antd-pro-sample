@@ -20,7 +20,7 @@ RUN mkdir appointment
 
 WORKDIR /app/appointment
 
-RUN git clone "https://ammediagmbh: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github.com/ammediagmbh/appointment.intranet.venus-beauty.ch.git"
+RUN git clone "https://ammediagmbh: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@github.com/ammediagmbh/appointment.intranet.venus-beauty.ch.git"
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install

@@ -49,4 +49,4 @@ EXPOSE 8000
 RUN pm2 start npm --name "app name" -- start
 
 # Start the application
-CMD ["pm2", "start npm --name "app name" -- start"]
+#CMD ["pm2", "start npm --name "app name" -- start"]

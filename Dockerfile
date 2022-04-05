@@ -17,7 +17,7 @@ FROM bitnami/node:16-prod
 ENV NODE_ENV="production"
 
 # Copy the application code
-COPY --from=builder /app /app
+COPY --from=builder /app/react-app /app/react-app
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root nonroot

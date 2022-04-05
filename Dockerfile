@@ -43,6 +43,8 @@ USER nonroot
 
 EXPOSE 3000
 
+RUN npm install pm2 -g
+
 # Start the application
 #CMD ["pm2", "start npm --name "appointment" -- start"]
 RUN pm2 start npm --name "appointment" -- start

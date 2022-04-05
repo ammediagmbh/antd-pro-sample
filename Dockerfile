@@ -21,14 +21,14 @@ FROM bitnami/node:16-prod
 ENV NODE_ENV="production"
 
 # Copy the application code
-COPY --from=builder /app /app
+COPY --from=builder /app/react-app /app
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root nonroot
 RUN chown -R nonroot /app
 USER nonroot
 
-WORKDIR /app/react-app
+WORKDIR /app
 EXPOSE 3000
 
 # Start the application

@@ -1,5 +1,5 @@
 # First build stage
-FROM bitnami/node:16 as builder
+FROM bitnami/node:14 as builder
 ENV NODE_ENV="production"
 
 RUN apt-get update
@@ -38,7 +38,7 @@ RUN npm install
 #WORKDIR /app/react-app
 
 # Second build stage
-FROM bitnami/node:16-prod
+FROM bitnami/node:14-prod
 ENV NODE_ENV="production"
 
 # Copy the application code

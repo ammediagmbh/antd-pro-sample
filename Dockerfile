@@ -21,7 +21,7 @@ COPY --from=builder /app/react-app /app/react-app
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root nonroot
-RUN chown -R nonroot /app
+RUN chown -R nonroot /app/react-app
 USER nonroot
 
 WORKDIR /app/react-app

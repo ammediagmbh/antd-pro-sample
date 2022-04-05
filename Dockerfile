@@ -1,5 +1,5 @@
 # First build stage
-FROM bitnami/node:12 as builder
+FROM bitnami/node:16 as builder
 ENV NODE_ENV="production"
 
 # Copy app's source code to the /app directory

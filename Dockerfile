@@ -18,6 +18,13 @@ RUN npm install
 
 RUN git clone https://github.com/ant-design/ant-design-pro.git react-app -b master
 
+WORKDIR /app/react-app
+
+RUN npm install -g npm@8.6.0
+RUN npm install -g yarn
+RUN yarn install --production=false
+
+
 # Second build stage
 FROM bitnami/node:16-prod
 ENV NODE_ENV="production"

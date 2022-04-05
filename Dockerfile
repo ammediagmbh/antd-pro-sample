@@ -12,7 +12,7 @@ RUN npm install
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install -g create-react-app
-RUN npx create-react-app r./
+RUN npx create-react-app ./
 RUN npm install -g express
 
 # Second build stage
@@ -20,14 +20,14 @@ FROM bitnami/node:16-prod
 ENV NODE_ENV="production"
 
 # Copy the application code
-COPY --from=builder /app/react-app /app/react-app
+COPY --from=builder /app /app
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root nonroot
-RUN chown -R nonroot /app/react-app
+RUN chown -R nonroot /app
 USER nonroot
 
-WORKDIR /app/react-app
+WORKDIR /app
 EXPOSE 3000
 
 # Start the application

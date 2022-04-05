@@ -28,7 +28,7 @@ RUN useradd -r -u 1001 -g root nonroot
 RUN chown -R nonroot /app
 USER nonroot
 
-WORKDIR /app
+WORKDIR /app/react-app
 EXPOSE 3000
 
 # Start the application

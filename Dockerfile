@@ -14,7 +14,7 @@ RUN npx create-react-app .
 
 
 # Second build stage
-FROM bitnami/node:12-prod
+FROM bitnami/node:16-prod
 ENV NODE_ENV="production"
 
 # Copy the application code

@@ -46,7 +46,8 @@ USER nonroot
 WORKDIR /app/my-project
 EXPOSE 8000
 
-RUN npm install -g pm2
+RUN ln -s /usr/bin/nodejs /usr/sbin/node
+
 RUN pm2 start npm --name "app name" -- start
 
 # Start the application

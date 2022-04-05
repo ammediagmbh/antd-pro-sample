@@ -10,7 +10,7 @@ WORKDIR /app
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install -g create-react-app
-RUN npx create-react-app .
+RUN npx create-react-app react-app
 
 
 # Second build stage

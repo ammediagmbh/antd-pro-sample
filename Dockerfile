@@ -21,6 +21,9 @@ WORKDIR /app
 
 RUN git clone --depth=1 https://github.com/ant-design/ant-design-pro.git my-project -b v2
 
+# The application's directory will be the working directory
+WORKDIR /app/my-project
+
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
 

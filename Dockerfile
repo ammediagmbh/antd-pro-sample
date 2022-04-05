@@ -38,6 +38,8 @@ RUN npx create-umi my-app
 
 WORKDIR /app/my-app
 
+RUN npm install
+
 # Second build stage
 FROM bitnami/node:16-prod
 ENV NODE_ENV="production"

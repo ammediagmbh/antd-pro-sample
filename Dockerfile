@@ -31,6 +31,7 @@ WORKDIR /app/ant-design-pro-site
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
+RUN npm i front-matter
 
 
 # Second build stage

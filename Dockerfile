@@ -19,26 +19,16 @@ COPY . /app
 WORKDIR /app
 
 
-#RUN mkdir appointment
 
-#WORKDIR /app/appointment
 
-#RUN git clone "https://ammediagmbh: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@github.com/ammediagmbh/appointment.intranet.venus-beauty.ch.git"
 
-#WORKDIR /app/appointment/appointment.intranet.venus-beauty.ch
+RUN git clone git@github.com:ant-design/ant-design-pro-site.git
 
-# Install Node.js dependencies defined in '/app/packages.json'
-# RUN npm install pm2 -g
-
+WORKDIR /app/ant-design-pro-site
 
 # Install Node.js dependencies defined in '/app/packages.json'
-#RUN npm install -g create-react-app
-#RUN npx create-react-app react-app
-RUN npx create-umi my-app
-
-WORKDIR /app/my-app
-
 RUN npm install
+
 
 # Second build stage
 FROM bitnami/node:16-prod
@@ -52,7 +42,7 @@ RUN useradd -r -u 1001 -g root nonroot
 RUN chown -R nonroot /app
 USER nonroot
 
-WORKDIR /app/my-app
+WORKDIR /app/ant-design-pro-site
 EXPOSE 3000
 
 # Start the application

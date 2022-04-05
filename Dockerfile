@@ -2,6 +2,7 @@
 FROM bitnami/node:16 as builder
 ENV NODE_ENV="production"
 
+RUN apt-get update
 RUN apt-get install -y git
 
 # Copy app's source code to the /app directory

@@ -29,7 +29,8 @@ WORKDIR /app/appointment/appointment.intranet.venus-beauty.ch
 
 # Install Node.js dependencies defined in '/app/packages.json'
 # RUN npm install pm2 -g
-RUN npm i -g node-sass
+RUN npm install -g node-sass
+RUN npm install -g node-gyp
 RUN npm install
 
 # Install Node.js dependencies defined in '/app/packages.json'

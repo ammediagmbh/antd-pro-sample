@@ -15,7 +15,8 @@ WORKDIR /app
 
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
-RUN npx create-react-app react-app
+
+RUN git clone https://github.com/ant-design/ant-design-pro.git react-app -b master
 
 # Second build stage
 FROM bitnami/node:16-prod

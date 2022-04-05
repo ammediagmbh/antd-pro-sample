@@ -10,7 +10,9 @@ WORKDIR /app
 
 
 # Install Node.js dependencies defined in '/app/packages.json'
+RUN npm install -g create-react-app
 RUN npx create-react-app react-app
+RUN npm install -g express
 
 # Second build stage
 FROM bitnami/node:16-prod

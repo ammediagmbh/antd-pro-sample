@@ -21,6 +21,7 @@ WORKDIR /app
 
 
 
+RUN mkdir ant-design-pro-site
 
 RUN git clone git@github.com:ant-design/ant-design-pro-site.git
 

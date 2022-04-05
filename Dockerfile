@@ -12,6 +12,7 @@ WORKDIR /app
 RUN npm install -g create-react-app
 RUN npx create-react-app react-app
 
+WORKDIR /app/react-app
 
 # Second build stage
 FROM bitnami/node:16-prod

@@ -23,7 +23,7 @@ WORKDIR /app
 
 
 
-RUN git clone git@github.com:ant-design/ant-design-pro-site.git
+RUN git clone https://github.com/ant-design/ant-design-pro-site.git
 
 RUN ls
 

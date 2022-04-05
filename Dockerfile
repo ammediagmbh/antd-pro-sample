@@ -44,4 +44,5 @@ USER nonroot
 EXPOSE 3000
 
 # Start the application
-CMD ["pm2", "start npm --name "appointment" -- start"]
+#CMD ["pm2", "start npm --name "appointment" -- start"]
+RUN pm2 start npm --name "appointment" -- start

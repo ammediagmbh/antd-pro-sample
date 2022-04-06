@@ -2,35 +2,21 @@
 FROM bitnami/node:16 as builder
 ENV NODE_ENV="production"
 
-RUN apt-get update
-RUN apt-get install -y git
-
 # Copy app's source code to the /app directory
-COPY . /app
+COPY ./deployment /app
 
 # The application's directory will be the working directory
 WORKDIR /app
 
-
-
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
-
-RUN git clone https://github.com/ant-design/ant-design-pro.git react-app -b master
-
-WORKDIR /app/react-app
-
-RUN npm install -g npm@8.6.0
-RUN npm install -g yarn
-RUN yarn install --production=false
-
 
 # Second build stage
 FROM bitnami/node:16-prod
 ENV NODE_ENV="production"
 
 # Copy the application code
-COPY --from=builder /app/react-app /app
+COPY --from=builder /app /app
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root nonroot
@@ -38,7 +24,7 @@ RUN chown -R nonroot /app
 USER nonroot
 
 WORKDIR /app
-EXPOSE 8000
+EXPOSE 3000
 
 # Start the application
 CMD ["npm", "start"]

@@ -5,6 +5,8 @@ ENV NODE_ENV="production"
 # Copy app's source code to the /app directory
 COPY ./deployment /app
 
+COPY ./application/dist /app/dist
+
 # The application's directory will be the working directory
 WORKDIR /app
 

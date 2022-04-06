@@ -7,7 +7,7 @@ COPY ./deployment/nginx.conf /opt/bitnami/nginx/conf/nginx.conf
 
 # The application's directory will be the working directory
 
-EXPOSE 80 443
+EXPOSE 8080 8443
 
 WORKDIR /app
 
